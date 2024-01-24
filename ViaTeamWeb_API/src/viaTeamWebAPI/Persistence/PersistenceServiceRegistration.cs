@@ -22,10 +22,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
-
-        services.AddScoped<IDenemeRepository, DenemeRepository>();
-        services.AddScoped<ITestRepository, TestRepository>();
-        services.AddScoped<IAloooRepository, AloooRepository>();
+        
         return services;
     }
 }
