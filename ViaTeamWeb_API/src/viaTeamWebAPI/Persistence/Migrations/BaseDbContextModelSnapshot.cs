@@ -181,7 +181,7 @@ namespace Persistence.Migrations
                         {
                             Id = 15,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Admin"
+                            Name = "Admin"
                         },
                         new
                         {
@@ -193,115 +193,37 @@ namespace Persistence.Migrations
                         {
                             Id = 17,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Read"
+                            Name = "operationclaims.admin"
                         },
                         new
                         {
                             Id = 18,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Write"
+                            Name = "operationclaims.read"
                         },
                         new
                         {
                             Id = 19,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Create"
+                            Name = "operationclaims.write"
                         },
                         new
                         {
                             Id = 20,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Update"
+                            Name = "operationclaims.add"
                         },
                         new
                         {
                             Id = 21,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Tests.Delete"
+                            Name = "operationclaims.update"
                         },
                         new
                         {
                             Id = 22,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Admin"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "StandardUser"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.admin"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.read"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.write"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.add"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.update"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "operationclaims.delete"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Admin"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Read"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Write"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Create"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Update"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Denemes.Delete"
                         });
                 });
 
@@ -477,8 +399,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 112, 191, 112, 77, 243, 195, 234, 7, 12, 61, 111, 215, 213, 231, 132, 178, 151, 130, 239, 164, 176, 46, 160, 181, 70, 42, 67, 127, 87, 201, 116, 226, 105, 158, 141, 212, 173, 186, 202, 24, 219, 17, 22, 42, 170, 15, 251, 12, 244, 22, 155, 160, 118, 142, 149, 205, 254, 188, 181, 65, 192, 164, 157, 72 },
-                            PasswordSalt = new byte[] { 120, 156, 36, 186, 141, 225, 221, 247, 139, 2, 24, 145, 85, 33, 38, 72, 100, 63, 229, 185, 239, 32, 109, 109, 241, 226, 231, 103, 60, 201, 12, 32, 199, 10, 152, 194, 31, 70, 36, 24, 133, 233, 185, 41, 200, 183, 127, 112, 219, 27, 17, 8, 14, 217, 62, 110, 68, 216, 142, 192, 15, 216, 249, 145, 207, 46, 67, 246, 109, 74, 132, 219, 161, 74, 14, 212, 48, 65, 4, 20, 19, 2, 55, 139, 4, 220, 78, 201, 116, 119, 82, 79, 57, 111, 117, 86, 157, 252, 145, 166, 94, 123, 229, 87, 223, 86, 21, 44, 44, 207, 3, 103, 28, 74, 201, 0, 236, 202, 153, 3, 175, 146, 151, 0, 8, 255, 19, 242 },
+                            PasswordHash = new byte[] { 228, 218, 154, 183, 121, 233, 11, 163, 237, 92, 142, 51, 170, 113, 29, 29, 235, 133, 98, 198, 64, 118, 49, 142, 151, 45, 194, 137, 151, 106, 69, 89, 41, 254, 73, 73, 151, 54, 85, 28, 161, 230, 236, 197, 101, 233, 222, 159, 156, 61, 54, 234, 114, 234, 225, 234, 20, 223, 84, 217, 3, 219, 183, 59 },
+                            PasswordSalt = new byte[] { 21, 148, 62, 71, 207, 180, 49, 252, 237, 43, 18, 30, 238, 206, 41, 99, 11, 177, 246, 93, 86, 80, 150, 15, 98, 58, 7, 246, 211, 174, 228, 216, 173, 79, 176, 252, 95, 42, 249, 39, 28, 177, 215, 148, 239, 68, 166, 191, 98, 255, 84, 173, 71, 63, 113, 5, 192, 122, 252, 80, 244, 220, 220, 98, 16, 16, 64, 66, 77, 127, 239, 88, 90, 0, 173, 152, 233, 171, 68, 201, 59, 166, 49, 230, 138, 68, 110, 144, 201, 59, 45, 180, 41, 126, 156, 164, 88, 2, 136, 153, 165, 204, 7, 38, 190, 51, 47, 1, 153, 253, 132, 175, 196, 171, 46, 138, 48, 231, 109, 91, 197, 181, 23, 58, 13, 155, 77, 26 },
                             Status = true
                         });
                 });
@@ -528,64 +450,6 @@ namespace Persistence.Migrations
                             OperationClaimId = 1,
                             UserId = 1
                         });
-                });
-
-            modelBuilder.Entity("Domain.Entities.Deneme", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreatedDate");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("DeletedDate");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("UpdatedDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Denemes", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Entities.Test", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreatedDate");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("DeletedDate");
-
-                    b.Property<string>("NAME")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("NAME");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("UpdatedDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tests", (string)null);
                 });
 
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>

@@ -163,31 +163,33 @@ namespace Persistence.Migrations
                 values: new object[,]
                 {
                     { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Admin", null },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.admin", null },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.read", null },
-                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.write", null },
-                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.add", null },
-                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.update", null },
-                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.delete", null },
-                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.admin", null },
-                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.read", null },
-                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.write", null },
-                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.add", null },
-                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.update", null },
-                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.delete", null },
-                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Admin", null },
-                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.admin", null },
-                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.read", null },
-                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.write", null },
-                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.add", null },
-                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.update", null },
-                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.delete", null }
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "StandardUser", null },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.admin", null },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.read", null },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.write", null },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.add", null },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.update", null },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "users.delete", null },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.admin", null },
+                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.read", null },
+                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.write", null },
+                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.add", null },
+                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.update", null },
+                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.delete", null },
+                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Admin", null },
+                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "StandardUser", null },
+                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.admin", null },
+                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.read", null },
+                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.write", null },
+                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.add", null },
+                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.update", null },
+                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.delete", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 43, 90, 182, 131, 76, 247, 72, 88, 69, 72, 79, 11, 142, 248, 87, 69, 7, 183, 169, 17, 186, 125, 79, 85, 80, 31, 198, 128, 28, 204, 193, 208, 178, 50, 75, 82, 2, 101, 0, 171, 75, 22, 47, 144, 188, 230, 68, 227, 55, 90, 179, 82, 101, 202, 22, 238, 183, 56, 16, 92, 95, 4, 110, 80 }, new byte[] { 210, 222, 64, 175, 11, 154, 134, 222, 242, 52, 69, 40, 240, 142, 66, 8, 3, 31, 216, 148, 69, 31, 150, 183, 206, 82, 227, 47, 167, 164, 246, 135, 206, 167, 48, 177, 70, 201, 232, 73, 108, 232, 154, 41, 37, 46, 111, 103, 236, 13, 107, 14, 84, 37, 85, 35, 92, 71, 111, 144, 62, 198, 87, 14, 123, 201, 92, 115, 228, 220, 133, 137, 200, 40, 133, 134, 190, 6, 31, 248, 150, 112, 208, 248, 119, 85, 2, 202, 62, 133, 245, 122, 16, 161, 167, 230, 26, 189, 74, 147, 164, 91, 73, 70, 210, 83, 144, 127, 45, 245, 234, 206, 226, 80, 110, 91, 146, 131, 44, 97, 129, 254, 15, 142, 65, 209, 198, 74 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 228, 218, 154, 183, 121, 233, 11, 163, 237, 92, 142, 51, 170, 113, 29, 29, 235, 133, 98, 198, 64, 118, 49, 142, 151, 45, 194, 137, 151, 106, 69, 89, 41, 254, 73, 73, 151, 54, 85, 28, 161, 230, 236, 197, 101, 233, 222, 159, 156, 61, 54, 234, 114, 234, 225, 234, 20, 223, 84, 217, 3, 219, 183, 59 }, new byte[] { 21, 148, 62, 71, 207, 180, 49, 252, 237, 43, 18, 30, 238, 206, 41, 99, 11, 177, 246, 93, 86, 80, 150, 15, 98, 58, 7, 246, 211, 174, 228, 216, 173, 79, 176, 252, 95, 42, 249, 39, 28, 177, 215, 148, 239, 68, 166, 191, 98, 255, 84, 173, 71, 63, 113, 5, 192, 122, 252, 80, 244, 220, 220, 98, 16, 16, 64, 66, 77, 127, 239, 88, 90, 0, 173, 152, 233, 171, 68, 201, 59, 166, 49, 230, 138, 68, 110, 144, 201, 59, 45, 180, 41, 126, 156, 164, 88, 2, 136, 153, 165, 204, 7, 38, 190, 51, 47, 1, 153, 253, 132, 175, 196, 171, 46, 138, 48, 231, 109, 91, 197, 181, 23, 58, 13, 155, 77, 26 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
