@@ -25,6 +25,7 @@ public static class PersistenceServiceRegistration
 
         services.AddScoped<IDenemeRepository, DenemeRepository>();
         services.AddScoped<ITestRepository, TestRepository>();
+        services.AddScoped<IAloooRepository, AloooRepository>();
         return services;
     }
 }

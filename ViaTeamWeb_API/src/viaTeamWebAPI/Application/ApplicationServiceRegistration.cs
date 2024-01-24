@@ -17,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Application.Services.Denemes;
 using Application.Services.Tests;
+using Application.Services.Alooos;
 
 
 namespace Application;
@@ -50,6 +51,7 @@ public static class ApplicationServiceRegistration
 
         services.AddScoped<IDenemesService, DenemesManager>();
         services.AddScoped<ITestsService, TestsManager>();
+        services.AddScoped<IAlooosService, AlooosManager>();
         return services;
     }
 

@@ -16,6 +16,7 @@ public class BaseDbContext : DbContext
     public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     public DbSet<Deneme> Denemes { get; set; }
     public DbSet<Test> Tests { get; set; }
+    public DbSet<Alooo> Alooos { get; set; }
     
 
     public BaseDbContext(DbContextOptions dbContextOptions)
