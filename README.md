@@ -19,7 +19,7 @@ Via Team websitesinin API'sini içeren proje.
 >### Kurulum
 >
 >1. Repoyu klonlayın.
->   ```sh
+>    ```sh
 >    git clone https://github.com/SadikSunbul/ViaTeamWebProjeAPI.git
 >
 >### Docker Container
