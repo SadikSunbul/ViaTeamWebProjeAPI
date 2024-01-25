@@ -26,7 +26,7 @@ Via Team websitesinin API'sini içeren proje.
 >
 >1. İmageyi indirin
 >    ```sh
->   docker push sadik10/aws_docker_test_api:tagname
+>    docker push sadik10/aws_docker_test_api:tagname
 
 ## Via Team Geliştiricileri
 
