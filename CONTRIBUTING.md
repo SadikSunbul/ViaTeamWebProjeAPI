@@ -7,7 +7,7 @@
 >1. **Fork Yapın:** Bu depoyu kendi GitHub hesabınıza fork yaparak kopyalayın.
 
 >2. **Projeyi Klonlayın:** Fork yaptığınız projeyi bilgisayarınıza klonlayın.
-    >   ```sh
+>   ```sh
 >   git clone https://github.com/sizin-kullanici-adi/proje-adiniz.git
 
 >3. Yeni Özellik Ekleyin veya Hata Düzeltin: Kod değişikliklerinizi yapın. Eğer yeni bir özellik ekliyorsanız, özellikle bu özelliğin nasıl kullanılacağına dair kısa bir açıklama ekleyin.
