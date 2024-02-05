@@ -21,6 +21,8 @@ using Application.Services.TeamMemberPresentations;
 using Application.Services.FeaturedSectionEntities;
 using Application.Services.FeaturedArticleCards;
 using Application.Services.Members;
+using Application.Services.BusinessAreas;
+using Application.Services.BusinessAreaMembers;
 
 
 
@@ -59,6 +61,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IFeaturedSectionEntitiesService, FeaturedSectionEntitiesManager>();
         services.AddScoped<IFeaturedArticleCardsService, FeaturedArticleCardsManager>();
         services.AddScoped<IMembersService, MembersManager>();
+        services.AddScoped<IBusinessAreasService, BusinessAreasManager>();
+        services.AddScoped<IBusinessAreaMembersService, BusinessAreaMembersManager>();
         return services;
     }
 

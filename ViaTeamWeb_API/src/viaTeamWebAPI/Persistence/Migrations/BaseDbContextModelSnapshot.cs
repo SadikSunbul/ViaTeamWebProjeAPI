@@ -440,6 +440,78 @@ namespace Persistence.Migrations
                             Id = 58,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "ContactPages.Delete"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Admin"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Read"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Write"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Create"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Update"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Delete"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Admin"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Read"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Write"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Create"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Update"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Delete"
                         });
                 });
 
@@ -615,8 +687,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 81, 103, 193, 146, 83, 205, 149, 72, 185, 113, 190, 197, 81, 102, 146, 245, 213, 130, 218, 160, 142, 248, 7, 205, 108, 82, 94, 137, 45, 168, 102, 175, 114, 156, 40, 198, 121, 101, 156, 86, 181, 34, 20, 125, 134, 157, 113, 212, 49, 27, 255, 17, 28, 150, 134, 248, 66, 143, 85, 165, 103, 34, 126, 203 },
-                            PasswordSalt = new byte[] { 172, 6, 58, 206, 89, 87, 16, 34, 215, 72, 212, 41, 246, 7, 197, 99, 92, 112, 111, 117, 77, 23, 169, 121, 215, 100, 171, 16, 58, 170, 178, 127, 205, 100, 105, 30, 20, 71, 179, 134, 118, 119, 67, 18, 6, 192, 77, 214, 17, 21, 65, 247, 52, 214, 177, 101, 44, 34, 183, 99, 65, 117, 63, 146, 69, 4, 100, 181, 94, 95, 157, 147, 115, 180, 41, 218, 165, 120, 106, 143, 185, 241, 242, 191, 74, 228, 0, 3, 1, 38, 159, 131, 177, 64, 48, 59, 74, 98, 5, 203, 101, 65, 134, 204, 134, 77, 76, 69, 222, 12, 141, 184, 76, 113, 216, 237, 176, 22, 99, 191, 235, 136, 124, 75, 120, 194, 55, 159 },
+                            PasswordHash = new byte[] { 178, 23, 42, 91, 255, 184, 89, 112, 251, 5, 192, 18, 89, 251, 214, 170, 164, 207, 249, 102, 244, 158, 70, 133, 88, 68, 208, 101, 177, 50, 8, 180, 240, 188, 186, 126, 158, 143, 44, 144, 231, 121, 121, 125, 101, 235, 174, 20, 212, 39, 179, 237, 78, 241, 245, 246, 61, 155, 135, 193, 1, 214, 235, 153 },
+                            PasswordSalt = new byte[] { 170, 245, 41, 67, 59, 34, 169, 219, 176, 205, 19, 169, 102, 202, 136, 153, 85, 202, 251, 240, 255, 5, 83, 119, 71, 203, 94, 211, 124, 238, 102, 233, 70, 110, 216, 170, 205, 51, 120, 218, 220, 196, 0, 86, 135, 184, 41, 59, 48, 198, 82, 9, 8, 53, 115, 146, 6, 59, 139, 119, 112, 188, 163, 41, 18, 231, 44, 241, 26, 235, 43, 67, 29, 120, 29, 55, 4, 247, 31, 200, 39, 106, 26, 106, 133, 36, 200, 168, 11, 122, 40, 38, 35, 209, 15, 33, 9, 73, 18, 32, 237, 226, 69, 52, 156, 20, 105, 197, 228, 54, 104, 56, 213, 123, 176, 202, 233, 47, 217, 26, 247, 128, 13, 232, 57, 60, 248, 158 },
                             Status = true
                         });
                 });
@@ -722,7 +794,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("BusinessAreaMember");
+                    b.ToTable("BusinessAreaMembers");
                 });
 
             modelBuilder.Entity("Domain.Entities.ContactPage", b =>
@@ -1189,21 +1261,17 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.BusinessAreaMember", b =>
                 {
-                    b.HasOne("Domain.Entities.BusinessArea", "BusinessArea")
+                    b.HasOne("Domain.Entities.BusinessArea", null)
                         .WithMany("Members")
                         .HasForeignKey("BusinessAreaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.Member", "Member")
+                    b.HasOne("Domain.Entities.Member", null)
                         .WithMany("BusinessAreas")
                         .HasForeignKey("MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("BusinessArea");
-
-                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("Domain.Entities.ExternalLink", b =>

@@ -29,6 +29,7 @@ public class BaseDbContext : DbContext
     public DbSet<FeaturedSectionEntitie> FeaturedSectionEntities { get; set; }
     public DbSet<FeaturedArticleCard> FeaturedArticleCards { get; set; }
     public DbSet<Member> Members { get; set; }
+    public DbSet<BusinessAreaMember> BusinessAreaMembers { get; set; }
     
     
     public BaseDbContext(DbContextOptions dbContextOptions)

@@ -353,7 +353,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BusinessAreaMember",
+                name: "BusinessAreaMembers",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -365,15 +365,15 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BusinessAreaMember", x => x.Id);
+                    table.PrimaryKey("PK_BusinessAreaMembers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BusinessAreaMember_BusinessAreas_BusinessAreaId",
+                        name: "FK_BusinessAreaMembers_BusinessAreas_BusinessAreaId",
                         column: x => x.BusinessAreaId,
                         principalTable: "BusinessAreas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BusinessAreaMember_Member_MemberId",
+                        name: "FK_BusinessAreaMembers_Member_MemberId",
                         column: x => x.MemberId,
                         principalTable: "Member",
                         principalColumn: "Id",
@@ -528,13 +528,25 @@ namespace Persistence.Migrations
                     { 55, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Write", null },
                     { 56, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Create", null },
                     { 57, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Update", null },
-                    { 58, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Delete", null }
+                    { 58, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Delete", null },
+                    { 59, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Admin", null },
+                    { 60, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Read", null },
+                    { 61, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Write", null },
+                    { 62, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Create", null },
+                    { 63, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Update", null },
+                    { 64, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreas.Delete", null },
+                    { 65, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Admin", null },
+                    { 66, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Read", null },
+                    { 67, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Write", null },
+                    { 68, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Create", null },
+                    { 69, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Update", null },
+                    { 70, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "BusinessAreaMembers.Delete", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 81, 103, 193, 146, 83, 205, 149, 72, 185, 113, 190, 197, 81, 102, 146, 245, 213, 130, 218, 160, 142, 248, 7, 205, 108, 82, 94, 137, 45, 168, 102, 175, 114, 156, 40, 198, 121, 101, 156, 86, 181, 34, 20, 125, 134, 157, 113, 212, 49, 27, 255, 17, 28, 150, 134, 248, 66, 143, 85, 165, 103, 34, 126, 203 }, new byte[] { 172, 6, 58, 206, 89, 87, 16, 34, 215, 72, 212, 41, 246, 7, 197, 99, 92, 112, 111, 117, 77, 23, 169, 121, 215, 100, 171, 16, 58, 170, 178, 127, 205, 100, 105, 30, 20, 71, 179, 134, 118, 119, 67, 18, 6, 192, 77, 214, 17, 21, 65, 247, 52, 214, 177, 101, 44, 34, 183, 99, 65, 117, 63, 146, 69, 4, 100, 181, 94, 95, 157, 147, 115, 180, 41, 218, 165, 120, 106, 143, 185, 241, 242, 191, 74, 228, 0, 3, 1, 38, 159, 131, 177, 64, 48, 59, 74, 98, 5, 203, 101, 65, 134, 204, 134, 77, 76, 69, 222, 12, 141, 184, 76, 113, 216, 237, 176, 22, 99, 191, 235, 136, 124, 75, 120, 194, 55, 159 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 178, 23, 42, 91, 255, 184, 89, 112, 251, 5, 192, 18, 89, 251, 214, 170, 164, 207, 249, 102, 244, 158, 70, 133, 88, 68, 208, 101, 177, 50, 8, 180, 240, 188, 186, 126, 158, 143, 44, 144, 231, 121, 121, 125, 101, 235, 174, 20, 212, 39, 179, 237, 78, 241, 245, 246, 61, 155, 135, 193, 1, 214, 235, 153 }, new byte[] { 170, 245, 41, 67, 59, 34, 169, 219, 176, 205, 19, 169, 102, 202, 136, 153, 85, 202, 251, 240, 255, 5, 83, 119, 71, 203, 94, 211, 124, 238, 102, 233, 70, 110, 216, 170, 205, 51, 120, 218, 220, 196, 0, 86, 135, 184, 41, 59, 48, 198, 82, 9, 8, 53, 115, 146, 6, 59, 139, 119, 112, 188, 163, 41, 18, 231, 44, 241, 26, 235, 43, 67, 29, 120, 29, 55, 4, 247, 31, 200, 39, 106, 26, 106, 133, 36, 200, 168, 11, 122, 40, 38, 35, 209, 15, 33, 9, 73, 18, 32, 237, 226, 69, 52, 156, 20, 105, 197, 228, 54, 104, 56, 213, 123, 176, 202, 233, 47, 217, 26, 247, 128, 13, 232, 57, 60, 248, 158 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -542,13 +554,13 @@ namespace Persistence.Migrations
                 values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, 1 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BusinessAreaMember_BusinessAreaId",
-                table: "BusinessAreaMember",
+                name: "IX_BusinessAreaMembers_BusinessAreaId",
+                table: "BusinessAreaMembers",
                 column: "BusinessAreaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BusinessAreaMember_MemberId",
-                table: "BusinessAreaMember",
+                name: "IX_BusinessAreaMembers_MemberId",
+                table: "BusinessAreaMembers",
                 column: "MemberId");
 
             migrationBuilder.CreateIndex(
@@ -632,7 +644,7 @@ namespace Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BusinessAreaMember");
+                name: "BusinessAreaMembers");
 
             migrationBuilder.DropTable(
                 name: "ContactPages");
