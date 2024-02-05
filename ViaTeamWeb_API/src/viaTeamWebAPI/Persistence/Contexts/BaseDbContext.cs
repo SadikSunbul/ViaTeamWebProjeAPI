@@ -28,6 +28,7 @@ public class BaseDbContext : DbContext
     public DbSet<HeroSectionWrite> HeroSectionWrites { get; set; }
     public DbSet<FeaturedSectionEntitie> FeaturedSectionEntities { get; set; }
     public DbSet<FeaturedArticleCard> FeaturedArticleCards { get; set; }
+    public DbSet<Member> Members { get; set; }
     
     
     public BaseDbContext(DbContextOptions dbContextOptions)

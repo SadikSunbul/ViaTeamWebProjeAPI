@@ -5,6 +5,7 @@ using Core.Application.Dtos;
 using Core.Security.Entities;
 using Core.Security.Hashing;
 using Core.Security.JWT;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Auth.Commands.Register;
@@ -32,14 +33,15 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
         private readonly IUserOperationClaimRepository _userOperationClaimRepository;
+        private readonly IMemberRepository _memberRepository;
 
-
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository)
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository, IMemberRepository memberRepository)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
             _userOperationClaimRepository = userOperationClaimRepository;
+            _memberRepository = memberRepository;
         }
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -82,6 +84,15 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             UserOperationClaim createdUserOperationClaim =
                 await _userOperationClaimRepository.AddAsync(mappedUserOperationClaim);
 
+            //Members kısmı olusturulcak
+           await _memberRepository.AddAsync(new Member()
+            {
+                UserId = createdUser.Id,
+                Job = request.UserForRegisterDto.Job,
+                Country = request.UserForRegisterDto.Country
+            });
+            
+            
             RegisteredResponse registeredResponse = new() { AccessToken = createdAccessToken, RefreshToken = addedRefreshToken };
             return registeredResponse;
         }

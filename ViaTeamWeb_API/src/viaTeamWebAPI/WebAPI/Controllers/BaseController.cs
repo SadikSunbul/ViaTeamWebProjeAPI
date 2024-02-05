@@ -33,4 +33,5 @@ public class BaseController : ControllerBase
         int userId = HttpContext.User.GetUserId();
         return userId;
     }
+    
 }

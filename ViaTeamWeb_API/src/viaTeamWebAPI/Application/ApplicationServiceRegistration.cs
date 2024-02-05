@@ -20,6 +20,7 @@ using Application.Services.HeroSectionWrites;
 using Application.Services.TeamMemberPresentations;
 using Application.Services.FeaturedSectionEntities;
 using Application.Services.FeaturedArticleCards;
+using Application.Services.Members;
 
 
 
@@ -57,6 +58,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ITeamMemberPresentationsService, TeamMemberPresentationsManager>();
         services.AddScoped<IFeaturedSectionEntitiesService, FeaturedSectionEntitiesManager>();
         services.AddScoped<IFeaturedArticleCardsService, FeaturedArticleCardsManager>();
+        services.AddScoped<IMembersService, MembersManager>();
         return services;
     }
 

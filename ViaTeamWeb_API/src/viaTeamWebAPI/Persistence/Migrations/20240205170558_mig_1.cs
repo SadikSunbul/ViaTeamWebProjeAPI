@@ -14,6 +14,22 @@ namespace Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "BusinessAreas",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BusinessAreas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ContactPages",
                 columns: table => new
                 {
@@ -65,29 +81,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Member",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    Job = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Member", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Member_Member_MemberId",
-                        column: x => x.MemberId,
-                        principalTable: "Member",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OperationClaims",
                 columns: table => new
                 {
@@ -101,6 +94,23 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OperationClaims", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SoftwareSkills",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SkillName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SkillPercent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SoftwareSkills", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -185,51 +195,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BusinessAreas",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BusinessAreas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BusinessAreas_Member_MemberId",
-                        column: x => x.MemberId,
-                        principalTable: "Member",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SoftwareSkills",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    SkillName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SkillPercent = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SoftwareSkills", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SoftwareSkills_Member_MemberId",
-                        column: x => x.MemberId,
-                        principalTable: "Member",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
                 {
@@ -269,6 +234,36 @@ namespace Persistence.Migrations
                     table.PrimaryKey("PK_EmailAuthenticators", x => x.Id);
                     table.ForeignKey(
                         name: "FK_EmailAuthenticators_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Member",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Job = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Authirize = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Member", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Member_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalTable: "Member",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Member_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -358,6 +353,34 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "BusinessAreaMember",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BusinessAreaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BusinessAreaMember", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BusinessAreaMember_BusinessAreas_BusinessAreaId",
+                        column: x => x.BusinessAreaId,
+                        principalTable: "BusinessAreas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BusinessAreaMember_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalTable: "Member",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ExternalLinks",
                 columns: table => new
                 {
@@ -387,13 +410,41 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SoftwareSkillMember",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SoftwareSkillId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SoftwareSkillMember", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SoftwareSkillMember_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalTable: "Member",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SoftwareSkillMember_SoftwareSkills_SoftwareSkillId",
+                        column: x => x.SoftwareSkillId,
+                        principalTable: "SoftwareSkills",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TeamMembers",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Presentation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
                     TeamId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -403,16 +454,16 @@ namespace Persistence.Migrations
                 {
                     table.PrimaryKey("PK_TeamMembers", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_TeamMembers_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalTable: "Member",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_TeamMembers_Teams_TeamId",
                         column: x => x.TeamId,
                         principalTable: "Teams",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TeamMembers_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -448,36 +499,42 @@ namespace Persistence.Migrations
                     { 26, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.add", null },
                     { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.update", null },
                     { 28, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.delete", null },
-                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Admin", null },
-                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Read", null },
-                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Write", null },
-                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Create", null },
-                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Update", null },
-                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Delete", null },
-                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Admin", null },
-                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Read", null },
-                    { 37, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Write", null },
-                    { 38, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Create", null },
-                    { 39, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Update", null },
-                    { 40, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Delete", null },
-                    { 41, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Admin", null },
-                    { 42, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Read", null },
-                    { 43, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Write", null },
-                    { 44, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Create", null },
-                    { 45, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Update", null },
-                    { 46, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Delete", null },
-                    { 47, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Admin", null },
-                    { 48, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Read", null },
-                    { 49, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Write", null },
-                    { 50, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Create", null },
-                    { 51, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Update", null },
-                    { 52, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Delete", null }
+                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Admin", null },
+                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Read", null },
+                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Write", null },
+                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Create", null },
+                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Update", null },
+                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Members.Delete", null },
+                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Admin", null },
+                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Read", null },
+                    { 37, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Write", null },
+                    { 38, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Create", null },
+                    { 39, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Update", null },
+                    { 40, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Delete", null },
+                    { 41, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Admin", null },
+                    { 42, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Read", null },
+                    { 43, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Write", null },
+                    { 44, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Create", null },
+                    { 45, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Update", null },
+                    { 46, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Delete", null },
+                    { 47, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Admin", null },
+                    { 48, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Read", null },
+                    { 49, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Write", null },
+                    { 50, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Create", null },
+                    { 51, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Update", null },
+                    { 52, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Delete", null },
+                    { 53, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Admin", null },
+                    { 54, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Read", null },
+                    { 55, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Write", null },
+                    { 56, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Create", null },
+                    { 57, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Update", null },
+                    { 58, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Delete", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 166, 158, 30, 86, 254, 37, 67, 122, 0, 59, 128, 220, 58, 37, 211, 68, 24, 197, 199, 78, 179, 236, 248, 58, 20, 94, 108, 233, 43, 28, 1, 168, 181, 196, 54, 42, 96, 233, 238, 248, 190, 75, 192, 161, 183, 228, 185, 121, 83, 176, 71, 169, 133, 20, 191, 193, 118, 109, 233, 31, 130, 205, 78, 61 }, new byte[] { 95, 208, 173, 240, 234, 202, 63, 216, 86, 188, 20, 95, 26, 104, 20, 136, 101, 46, 162, 49, 96, 99, 125, 152, 117, 91, 35, 222, 234, 110, 214, 172, 243, 247, 131, 148, 73, 93, 143, 197, 2, 64, 153, 226, 75, 61, 247, 84, 29, 147, 59, 51, 255, 246, 74, 99, 108, 225, 17, 84, 32, 79, 136, 172, 33, 248, 48, 182, 123, 49, 22, 100, 59, 146, 155, 9, 103, 243, 52, 199, 89, 195, 191, 105, 192, 137, 89, 141, 148, 201, 220, 154, 147, 100, 74, 160, 15, 32, 122, 173, 34, 64, 204, 144, 3, 8, 250, 16, 49, 17, 102, 43, 167, 185, 18, 86, 7, 217, 42, 55, 112, 107, 196, 65, 114, 168, 31, 246 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 81, 103, 193, 146, 83, 205, 149, 72, 185, 113, 190, 197, 81, 102, 146, 245, 213, 130, 218, 160, 142, 248, 7, 205, 108, 82, 94, 137, 45, 168, 102, 175, 114, 156, 40, 198, 121, 101, 156, 86, 181, 34, 20, 125, 134, 157, 113, 212, 49, 27, 255, 17, 28, 150, 134, 248, 66, 143, 85, 165, 103, 34, 126, 203 }, new byte[] { 172, 6, 58, 206, 89, 87, 16, 34, 215, 72, 212, 41, 246, 7, 197, 99, 92, 112, 111, 117, 77, 23, 169, 121, 215, 100, 171, 16, 58, 170, 178, 127, 205, 100, 105, 30, 20, 71, 179, 134, 118, 119, 67, 18, 6, 192, 77, 214, 17, 21, 65, 247, 52, 214, 177, 101, 44, 34, 183, 99, 65, 117, 63, 146, 69, 4, 100, 181, 94, 95, 157, 147, 115, 180, 41, 218, 165, 120, 106, 143, 185, 241, 242, 191, 74, 228, 0, 3, 1, 38, 159, 131, 177, 64, 48, 59, 74, 98, 5, 203, 101, 65, 134, 204, 134, 77, 76, 69, 222, 12, 141, 184, 76, 113, 216, 237, 176, 22, 99, 191, 235, 136, 124, 75, 120, 194, 55, 159 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -485,8 +542,13 @@ namespace Persistence.Migrations
                 values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, 1 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BusinessAreas_MemberId",
-                table: "BusinessAreas",
+                name: "IX_BusinessAreaMember_BusinessAreaId",
+                table: "BusinessAreaMember",
+                column: "BusinessAreaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BusinessAreaMember_MemberId",
+                table: "BusinessAreaMember",
                 column: "MemberId");
 
             migrationBuilder.CreateIndex(
@@ -515,6 +577,11 @@ namespace Persistence.Migrations
                 column: "MemberId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Member_UserId",
+                table: "Member",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OtpAuthenticators_UserId",
                 table: "OtpAuthenticators",
                 column: "UserId");
@@ -525,19 +592,25 @@ namespace Persistence.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SoftwareSkills_MemberId",
-                table: "SoftwareSkills",
+                name: "IX_SoftwareSkillMember_MemberId",
+                table: "SoftwareSkillMember",
                 column: "MemberId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SoftwareSkillMember_SoftwareSkillId",
+                table: "SoftwareSkillMember",
+                column: "SoftwareSkillId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TeamMembers_MemberId",
+                table: "TeamMembers",
+                column: "MemberId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TeamMembers_TeamId",
                 table: "TeamMembers",
                 column: "TeamId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TeamMembers_UserId",
-                table: "TeamMembers",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teams_TeamAboutId",
@@ -559,7 +632,7 @@ namespace Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BusinessAreas");
+                name: "BusinessAreaMember");
 
             migrationBuilder.DropTable(
                 name: "ContactPages");
@@ -583,7 +656,7 @@ namespace Persistence.Migrations
                 name: "RefreshTokens");
 
             migrationBuilder.DropTable(
-                name: "SoftwareSkills");
+                name: "SoftwareSkillMember");
 
             migrationBuilder.DropTable(
                 name: "TeamMemberPresentations");
@@ -595,7 +668,13 @@ namespace Persistence.Migrations
                 name: "UserOperationClaims");
 
             migrationBuilder.DropTable(
+                name: "BusinessAreas");
+
+            migrationBuilder.DropTable(
                 name: "FeaturedSectionEntities");
+
+            migrationBuilder.DropTable(
+                name: "SoftwareSkills");
 
             migrationBuilder.DropTable(
                 name: "Member");
