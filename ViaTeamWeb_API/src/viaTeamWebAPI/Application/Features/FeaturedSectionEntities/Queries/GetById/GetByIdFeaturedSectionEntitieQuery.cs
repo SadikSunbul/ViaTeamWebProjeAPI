@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Entities;
 using Core.Application.Pipelines.Authorization;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using static Application.Features.FeaturedSectionEntities.Constants.FeaturedSectionEntitiesOperationClaims;
 
 namespace Application.Features.FeaturedSectionEntities.Queries.GetById;
@@ -20,12 +21,14 @@ public class GetByIdFeaturedSectionEntitieQuery : IRequest<GetByIdFeaturedSectio
         private readonly IMapper _mapper;
         private readonly IFeaturedSectionEntitieRepository _featuredSectionEntitieRepository;
         private readonly FeaturedSectionEntitieBusinessRules _featuredSectionEntitieBusinessRules;
+        private readonly IFeaturedArticleCardRepository _featuredArticleCardRepository;
 
-        public GetByIdFeaturedSectionEntitieQueryHandler(IMapper mapper, IFeaturedSectionEntitieRepository featuredSectionEntitieRepository, FeaturedSectionEntitieBusinessRules featuredSectionEntitieBusinessRules)
+        public GetByIdFeaturedSectionEntitieQueryHandler(IMapper mapper, IFeaturedSectionEntitieRepository featuredSectionEntitieRepository, FeaturedSectionEntitieBusinessRules featuredSectionEntitieBusinessRules, IFeaturedArticleCardRepository featuredArticleCardRepository)
         {
             _mapper = mapper;
             _featuredSectionEntitieRepository = featuredSectionEntitieRepository;
             _featuredSectionEntitieBusinessRules = featuredSectionEntitieBusinessRules;
+            _featuredArticleCardRepository = featuredArticleCardRepository;
         }
 
         public async Task<GetByIdFeaturedSectionEntitieResponse> Handle(GetByIdFeaturedSectionEntitieQuery request, CancellationToken cancellationToken)
@@ -34,6 +37,8 @@ public class GetByIdFeaturedSectionEntitieQuery : IRequest<GetByIdFeaturedSectio
             await _featuredSectionEntitieBusinessRules.FeaturedSectionEntitieShouldExistWhenSelected(featuredSectionEntitie);
 
             GetByIdFeaturedSectionEntitieResponse response = _mapper.Map<GetByIdFeaturedSectionEntitieResponse>(featuredSectionEntitie);
+            response.EFeaturedArticleCards =await _featuredArticleCardRepository.Query()
+                .Where(i => i.FeaturedSectionEntitiesId == request.Id).ToListAsync();
             return response;
         }
     }
