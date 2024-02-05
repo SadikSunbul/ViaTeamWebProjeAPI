@@ -18,8 +18,6 @@ public class BaseDbContext : DbContext
     public DbSet<BusinessArea> BusinessAreas { get; set; }
     public DbSet<ContactPage> ContactPages { get; set; }
     public DbSet<ExternalLink> ExternalLinks { get; set; }
-    public DbSet<FeaturedArticleCard> FeaturedArticleCard { get; set; }
-    public DbSet<FeaturedSectionEntities> FeaturedSectionEntitiess { get; set; }
     public DbSet<HeroSectionWrite> HeroSectionWrite { get; set; }
     public DbSet<Member> Member { get; set; }
     public DbSet<SoftwareSkill> SoftwareSkills { get; set; }
@@ -28,6 +26,8 @@ public class BaseDbContext : DbContext
     public DbSet<TeamMember> TeamMembers { get; set; }
     public DbSet<TeamMemberPresentation> TeamMemberPresentations { get; set; }
     public DbSet<HeroSectionWrite> HeroSectionWrites { get; set; }
+    public DbSet<FeaturedSectionEntitie> FeaturedSectionEntities { get; set; }
+    public DbSet<FeaturedArticleCard> FeaturedArticleCards { get; set; }
     
     
     public BaseDbContext(DbContextOptions dbContextOptions)

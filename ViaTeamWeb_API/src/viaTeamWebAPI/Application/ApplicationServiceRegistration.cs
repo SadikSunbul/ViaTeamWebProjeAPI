@@ -18,6 +18,8 @@ using System.Reflection;
 using Application.Services.ContactPages;
 using Application.Services.HeroSectionWrites;
 using Application.Services.TeamMemberPresentations;
+using Application.Services.FeaturedSectionEntities;
+using Application.Services.FeaturedArticleCards;
 
 
 
@@ -53,6 +55,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IContactPagesService, ContactPagesManager>();
         services.AddScoped<IHeroSectionWritesService, HeroSectionWritesManager>();
         services.AddScoped<ITeamMemberPresentationsService, TeamMemberPresentationsManager>();
+        services.AddScoped<IFeaturedSectionEntitiesService, FeaturedSectionEntitiesManager>();
+        services.AddScoped<IFeaturedArticleCardsService, FeaturedArticleCardsManager>();
         return services;
     }
 

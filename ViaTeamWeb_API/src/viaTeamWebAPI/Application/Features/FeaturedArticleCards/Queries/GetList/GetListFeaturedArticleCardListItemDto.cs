@@ -1,14 +1,14 @@
-using Core.Persistence.Repositories;
-using System.ComponentModel.DataAnnotations.Schema;
+using Core.Application.Dtos;
+using Domain.Entities;
 
-namespace Domain.Entities;
+namespace Application.Features.FeaturedArticleCards.Queries.GetList;
 
-public class FeaturedArticleCard:Entity<Guid>
+public class GetListFeaturedArticleCardListItemDto : IDto
 {
+    public Guid Id { get; set; }
     public string Title { get; set; }
     public string Explanation { get; set; }
     public string Writer { get; set; }
     public Guid FeaturedSectionEntitiesId { get; set; }
-    [NotMapped]
     public FeaturedSectionEntitie FeaturedSectionEntitie { get; set; }
 }

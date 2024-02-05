@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240205093017_mig_1")]
+    [Migration("20240205120056_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -184,49 +184,229 @@ namespace Persistence.Migrations
                         {
                             Id = 15,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Admin"
+                            Name = "TeamMemberPresentations.Admin"
                         },
                         new
                         {
                             Id = 16,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "StandardUser"
+                            Name = "TeamMemberPresentations.Read"
                         },
                         new
                         {
                             Id = 17,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.admin"
+                            Name = "TeamMemberPresentations.Write"
                         },
                         new
                         {
                             Id = 18,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.read"
+                            Name = "TeamMemberPresentations.Create"
                         },
                         new
                         {
                             Id = 19,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.write"
+                            Name = "TeamMemberPresentations.Update"
                         },
                         new
                         {
                             Id = 20,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.add"
+                            Name = "TeamMemberPresentations.Delete"
                         },
                         new
                         {
                             Id = 21,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.update"
+                            Name = "Admin"
                         },
                         new
                         {
                             Id = 22,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "StandardUser"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.admin"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.read"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.write"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.add"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.update"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "operationclaims.delete"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Admin"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Read"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Write"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Create"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Update"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HeroSectionWrites.Delete"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Admin"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Read"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Write"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Create"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Update"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedSectionEntities.Delete"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Admin"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Read"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Write"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Create"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Update"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "FeaturedArticleCards.Delete"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Admin"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Read"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Write"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Create"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Update"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Delete"
                         });
                 });
 
@@ -402,8 +582,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 122, 49, 240, 110, 196, 149, 245, 129, 189, 122, 62, 106, 32, 220, 46, 46, 51, 12, 222, 128, 82, 93, 190, 233, 75, 123, 234, 115, 102, 183, 224, 130, 117, 51, 95, 219, 9, 57, 88, 75, 234, 93, 14, 222, 164, 82, 6, 254, 38, 42, 122, 11, 57, 46, 109, 189, 218, 184, 36, 141, 83, 153, 105, 170 },
-                            PasswordSalt = new byte[] { 39, 14, 131, 3, 183, 161, 61, 66, 58, 206, 12, 15, 189, 189, 16, 118, 16, 182, 187, 166, 27, 236, 200, 51, 61, 23, 71, 202, 213, 73, 18, 198, 189, 18, 75, 13, 164, 39, 181, 184, 199, 85, 208, 216, 89, 47, 49, 180, 78, 44, 103, 40, 231, 62, 193, 114, 170, 48, 187, 226, 137, 209, 127, 109, 161, 113, 243, 139, 50, 218, 157, 73, 201, 248, 232, 145, 231, 23, 37, 19, 135, 17, 76, 133, 117, 146, 59, 92, 56, 135, 164, 59, 63, 176, 29, 89, 100, 236, 78, 232, 210, 215, 183, 80, 238, 27, 145, 132, 173, 154, 130, 157, 220, 51, 119, 59, 106, 18, 98, 239, 251, 121, 111, 131, 244, 235, 231, 219 },
+                            PasswordHash = new byte[] { 166, 158, 30, 86, 254, 37, 67, 122, 0, 59, 128, 220, 58, 37, 211, 68, 24, 197, 199, 78, 179, 236, 248, 58, 20, 94, 108, 233, 43, 28, 1, 168, 181, 196, 54, 42, 96, 233, 238, 248, 190, 75, 192, 161, 183, 228, 185, 121, 83, 176, 71, 169, 133, 20, 191, 193, 118, 109, 233, 31, 130, 205, 78, 61 },
+                            PasswordSalt = new byte[] { 95, 208, 173, 240, 234, 202, 63, 216, 86, 188, 20, 95, 26, 104, 20, 136, 101, 46, 162, 49, 96, 99, 125, 152, 117, 91, 35, 222, 234, 110, 214, 172, 243, 247, 131, 148, 73, 93, 143, 197, 2, 64, 153, 226, 75, 61, 247, 84, 29, 147, 59, 51, 255, 246, 74, 99, 108, 225, 17, 84, 32, 79, 136, 172, 33, 248, 48, 182, 123, 49, 22, 100, 59, 146, 155, 9, 103, 243, 52, 199, 89, 195, 191, 105, 192, 137, 89, 141, 148, 201, 220, 154, 147, 100, 74, 160, 15, 32, 122, 173, 34, 64, 204, 144, 3, 8, 250, 16, 49, 17, 102, 43, 167, 185, 18, 86, 7, 217, 42, 55, 112, 107, 196, 65, 114, 168, 31, 246 },
                             Status = true
                         });
                 });
@@ -574,6 +754,9 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("FeaturedSectionEntitieId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("FeaturedSectionEntitiesId")
                         .HasColumnType("uniqueidentifier");
 
@@ -590,12 +773,12 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FeaturedSectionEntitiesId");
+                    b.HasIndex("FeaturedSectionEntitieId");
 
-                    b.ToTable("FeaturedArticleCard");
+                    b.ToTable("FeaturedArticleCards");
                 });
 
-            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntities", b =>
+            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntitie", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -620,7 +803,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FeaturedSectionEntitiess");
+                    b.ToTable("FeaturedSectionEntities");
                 });
 
             modelBuilder.Entity("Domain.Entities.HeroSectionWrite", b =>
@@ -939,13 +1122,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.FeaturedArticleCard", b =>
                 {
-                    b.HasOne("Domain.Entities.FeaturedSectionEntities", "FeaturedSectionEntities")
+                    b.HasOne("Domain.Entities.FeaturedSectionEntitie", null)
                         .WithMany("FeturedArticleCards")
-                        .HasForeignKey("FeaturedSectionEntitiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FeaturedSectionEntities");
+                        .HasForeignKey("FeaturedSectionEntitieId");
                 });
 
             modelBuilder.Entity("Domain.Entities.Member", b =>
@@ -1008,7 +1187,7 @@ namespace Persistence.Migrations
                     b.Navigation("UserOperationClaims");
                 });
 
-            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntities", b =>
+            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntitie", b =>
                 {
                     b.Navigation("FeturedArticleCards");
                 });

@@ -26,6 +26,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IContactPageRepository, ContactPageRepository>();
         services.AddScoped<IHeroSectionWriteRepository, HeroSectionWriteRepository>();
         services.AddScoped<ITeamMemberPresentationRepository, TeamMemberPresentationRepository>();
+        services.AddScoped<IFeaturedSectionEntitieRepository, FeaturedSectionEntitieRepository>();
+        services.AddScoped<IFeaturedArticleCardRepository, FeaturedArticleCardRepository>();
         return services;
     }
 }

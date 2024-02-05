@@ -2,13 +2,13 @@ using Core.Persistence.Repositories;
 
 namespace Domain.Entities;
 
-public class FeaturedSectionEntities:Entity<Guid>
+public class FeaturedSectionEntitie:Entity<Guid>
 {
     public string SmallTitle { get; set; }
     public string Title { get; set; }
     public ICollection<FeaturedArticleCard> FeturedArticleCards { get; set; }
 
-    public FeaturedSectionEntities()
+    public FeaturedSectionEntitie()
     {
         FeturedArticleCards = new List<FeaturedArticleCard>();
     }

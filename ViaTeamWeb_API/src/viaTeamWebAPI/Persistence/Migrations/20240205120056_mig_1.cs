@@ -32,7 +32,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FeaturedSectionEntitiess",
+                name: "FeaturedSectionEntities",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -44,7 +44,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FeaturedSectionEntitiess", x => x.Id);
+                    table.PrimaryKey("PK_FeaturedSectionEntities", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -161,7 +161,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FeaturedArticleCard",
+                name: "FeaturedArticleCards",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -169,19 +169,19 @@ namespace Persistence.Migrations
                     Explanation = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Writer = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FeaturedSectionEntitiesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FeaturedSectionEntitieId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FeaturedArticleCard", x => x.Id);
+                    table.PrimaryKey("PK_FeaturedArticleCards", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FeaturedArticleCard_FeaturedSectionEntitiess_FeaturedSectionEntitiesId",
-                        column: x => x.FeaturedSectionEntitiesId,
-                        principalTable: "FeaturedSectionEntitiess",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_FeaturedArticleCards_FeaturedSectionEntities_FeaturedSectionEntitieId",
+                        column: x => x.FeaturedSectionEntitieId,
+                        principalTable: "FeaturedSectionEntities",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -434,20 +434,50 @@ namespace Persistence.Migrations
                     { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.add", null },
                     { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.update", null },
                     { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "useroperationclaims.delete", null },
-                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Admin", null },
-                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "StandardUser", null },
-                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.admin", null },
-                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.read", null },
-                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.write", null },
-                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.add", null },
-                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.update", null },
-                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.delete", null }
+                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Admin", null },
+                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Read", null },
+                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Write", null },
+                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Create", null },
+                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Update", null },
+                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TeamMemberPresentations.Delete", null },
+                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Admin", null },
+                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "StandardUser", null },
+                    { 23, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.admin", null },
+                    { 24, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.read", null },
+                    { 25, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.write", null },
+                    { 26, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.add", null },
+                    { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.update", null },
+                    { 28, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "operationclaims.delete", null },
+                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Admin", null },
+                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Read", null },
+                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Write", null },
+                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Create", null },
+                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Update", null },
+                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "HeroSectionWrites.Delete", null },
+                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Admin", null },
+                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Read", null },
+                    { 37, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Write", null },
+                    { 38, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Create", null },
+                    { 39, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Update", null },
+                    { 40, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedSectionEntities.Delete", null },
+                    { 41, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Admin", null },
+                    { 42, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Read", null },
+                    { 43, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Write", null },
+                    { 44, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Create", null },
+                    { 45, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Update", null },
+                    { 46, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "FeaturedArticleCards.Delete", null },
+                    { 47, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Admin", null },
+                    { 48, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Read", null },
+                    { 49, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Write", null },
+                    { 50, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Create", null },
+                    { 51, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Update", null },
+                    { 52, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ContactPages.Delete", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 122, 49, 240, 110, 196, 149, 245, 129, 189, 122, 62, 106, 32, 220, 46, 46, 51, 12, 222, 128, 82, 93, 190, 233, 75, 123, 234, 115, 102, 183, 224, 130, 117, 51, 95, 219, 9, 57, 88, 75, 234, 93, 14, 222, 164, 82, 6, 254, 38, 42, 122, 11, 57, 46, 109, 189, 218, 184, 36, 141, 83, 153, 105, 170 }, new byte[] { 39, 14, 131, 3, 183, 161, 61, 66, 58, 206, 12, 15, 189, 189, 16, 118, 16, 182, 187, 166, 27, 236, 200, 51, 61, 23, 71, 202, 213, 73, 18, 198, 189, 18, 75, 13, 164, 39, 181, 184, 199, 85, 208, 216, 89, 47, 49, 180, 78, 44, 103, 40, 231, 62, 193, 114, 170, 48, 187, 226, 137, 209, 127, 109, 161, 113, 243, 139, 50, 218, 157, 73, 201, 248, 232, 145, 231, 23, 37, 19, 135, 17, 76, 133, 117, 146, 59, 92, 56, 135, 164, 59, 63, 176, 29, 89, 100, 236, 78, 232, 210, 215, 183, 80, 238, 27, 145, 132, 173, 154, 130, 157, 220, 51, 119, 59, 106, 18, 98, 239, 251, 121, 111, 131, 244, 235, 231, 219 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 166, 158, 30, 86, 254, 37, 67, 122, 0, 59, 128, 220, 58, 37, 211, 68, 24, 197, 199, 78, 179, 236, 248, 58, 20, 94, 108, 233, 43, 28, 1, 168, 181, 196, 54, 42, 96, 233, 238, 248, 190, 75, 192, 161, 183, 228, 185, 121, 83, 176, 71, 169, 133, 20, 191, 193, 118, 109, 233, 31, 130, 205, 78, 61 }, new byte[] { 95, 208, 173, 240, 234, 202, 63, 216, 86, 188, 20, 95, 26, 104, 20, 136, 101, 46, 162, 49, 96, 99, 125, 152, 117, 91, 35, 222, 234, 110, 214, 172, 243, 247, 131, 148, 73, 93, 143, 197, 2, 64, 153, 226, 75, 61, 247, 84, 29, 147, 59, 51, 255, 246, 74, 99, 108, 225, 17, 84, 32, 79, 136, 172, 33, 248, 48, 182, 123, 49, 22, 100, 59, 146, 155, 9, 103, 243, 52, 199, 89, 195, 191, 105, 192, 137, 89, 141, 148, 201, 220, 154, 147, 100, 74, 160, 15, 32, 122, 173, 34, 64, 204, 144, 3, 8, 250, 16, 49, 17, 102, 43, 167, 185, 18, 86, 7, 217, 42, 55, 112, 107, 196, 65, 114, 168, 31, 246 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -475,9 +505,9 @@ namespace Persistence.Migrations
                 column: "TeamId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FeaturedArticleCard_FeaturedSectionEntitiesId",
-                table: "FeaturedArticleCard",
-                column: "FeaturedSectionEntitiesId");
+                name: "IX_FeaturedArticleCards_FeaturedSectionEntitieId",
+                table: "FeaturedArticleCards",
+                column: "FeaturedSectionEntitieId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Member_MemberId",
@@ -541,7 +571,7 @@ namespace Persistence.Migrations
                 name: "ExternalLinks");
 
             migrationBuilder.DropTable(
-                name: "FeaturedArticleCard");
+                name: "FeaturedArticleCards");
 
             migrationBuilder.DropTable(
                 name: "HeroSectionWrite");
@@ -565,7 +595,7 @@ namespace Persistence.Migrations
                 name: "UserOperationClaims");
 
             migrationBuilder.DropTable(
-                name: "FeaturedSectionEntitiess");
+                name: "FeaturedSectionEntities");
 
             migrationBuilder.DropTable(
                 name: "Member");

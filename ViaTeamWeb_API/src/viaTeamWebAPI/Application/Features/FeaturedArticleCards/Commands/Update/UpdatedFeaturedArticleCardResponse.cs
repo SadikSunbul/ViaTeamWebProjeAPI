@@ -1,14 +1,14 @@
-using Core.Persistence.Repositories;
-using System.ComponentModel.DataAnnotations.Schema;
+using Core.Application.Responses;
+using Domain.Entities;
 
-namespace Domain.Entities;
+namespace Application.Features.FeaturedArticleCards.Commands.Update;
 
-public class FeaturedArticleCard:Entity<Guid>
+public class UpdatedFeaturedArticleCardResponse : IResponse
 {
+    public Guid Id { get; set; }
     public string Title { get; set; }
     public string Explanation { get; set; }
     public string Writer { get; set; }
     public Guid FeaturedSectionEntitiesId { get; set; }
-    [NotMapped]
     public FeaturedSectionEntitie FeaturedSectionEntitie { get; set; }
 }
