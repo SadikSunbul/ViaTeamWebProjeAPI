@@ -15,6 +15,9 @@ using Core.Mailing.MailKitImplementations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Application.Services.ContactPages;
+using Application.Services.HeroSectionWrites;
+using Application.Services.TeamMemberPresentations;
 
 
 
@@ -47,6 +50,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
         
+        services.AddScoped<IContactPagesService, ContactPagesManager>();
+        services.AddScoped<IHeroSectionWritesService, HeroSectionWritesManager>();
+        services.AddScoped<ITeamMemberPresentationsService, TeamMemberPresentationsManager>();
         return services;
     }
 

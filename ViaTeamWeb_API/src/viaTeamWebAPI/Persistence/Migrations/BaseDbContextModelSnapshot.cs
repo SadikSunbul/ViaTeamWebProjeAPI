@@ -399,8 +399,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 228, 218, 154, 183, 121, 233, 11, 163, 237, 92, 142, 51, 170, 113, 29, 29, 235, 133, 98, 198, 64, 118, 49, 142, 151, 45, 194, 137, 151, 106, 69, 89, 41, 254, 73, 73, 151, 54, 85, 28, 161, 230, 236, 197, 101, 233, 222, 159, 156, 61, 54, 234, 114, 234, 225, 234, 20, 223, 84, 217, 3, 219, 183, 59 },
-                            PasswordSalt = new byte[] { 21, 148, 62, 71, 207, 180, 49, 252, 237, 43, 18, 30, 238, 206, 41, 99, 11, 177, 246, 93, 86, 80, 150, 15, 98, 58, 7, 246, 211, 174, 228, 216, 173, 79, 176, 252, 95, 42, 249, 39, 28, 177, 215, 148, 239, 68, 166, 191, 98, 255, 84, 173, 71, 63, 113, 5, 192, 122, 252, 80, 244, 220, 220, 98, 16, 16, 64, 66, 77, 127, 239, 88, 90, 0, 173, 152, 233, 171, 68, 201, 59, 166, 49, 230, 138, 68, 110, 144, 201, 59, 45, 180, 41, 126, 156, 164, 88, 2, 136, 153, 165, 204, 7, 38, 190, 51, 47, 1, 153, 253, 132, 175, 196, 171, 46, 138, 48, 231, 109, 91, 197, 181, 23, 58, 13, 155, 77, 26 },
+                            PasswordHash = new byte[] { 122, 49, 240, 110, 196, 149, 245, 129, 189, 122, 62, 106, 32, 220, 46, 46, 51, 12, 222, 128, 82, 93, 190, 233, 75, 123, 234, 115, 102, 183, 224, 130, 117, 51, 95, 219, 9, 57, 88, 75, 234, 93, 14, 222, 164, 82, 6, 254, 38, 42, 122, 11, 57, 46, 109, 189, 218, 184, 36, 141, 83, 153, 105, 170 },
+                            PasswordSalt = new byte[] { 39, 14, 131, 3, 183, 161, 61, 66, 58, 206, 12, 15, 189, 189, 16, 118, 16, 182, 187, 166, 27, 236, 200, 51, 61, 23, 71, 202, 213, 73, 18, 198, 189, 18, 75, 13, 164, 39, 181, 184, 199, 85, 208, 216, 89, 47, 49, 180, 78, 44, 103, 40, 231, 62, 193, 114, 170, 48, 187, 226, 137, 209, 127, 109, 161, 113, 243, 139, 50, 218, 157, 73, 201, 248, 232, 145, 231, 23, 37, 19, 135, 17, 76, 133, 117, 146, 59, 92, 56, 135, 164, 59, 63, 176, 29, 89, 100, 236, 78, 232, 210, 215, 183, 80, 238, 27, 145, 132, 173, 154, 130, 157, 220, 51, 119, 59, 106, 18, 98, 239, 251, 121, 111, 131, 244, 235, 231, 219 },
                             Status = true
                         });
                 });
@@ -450,6 +450,410 @@ namespace Persistence.Migrations
                             OperationClaimId = 1,
                             UserId = 1
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.BusinessArea", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("BusinessAreas");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ContactPage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactPages");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ExternalLink", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("TeamId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("ExternalLinks");
+                });
+
+            modelBuilder.Entity("Domain.Entities.FeaturedArticleCard", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Explanation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("FeaturedSectionEntitiesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Writer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FeaturedSectionEntitiesId");
+
+                    b.ToTable("FeaturedArticleCard");
+                });
+
+            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntities", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SmallTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FeaturedSectionEntitiess");
+                });
+
+            modelBuilder.Entity("Domain.Entities.HeroSectionWrite", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ButtonText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Paragraph")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HeroSectionWrite");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Member", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Job")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Member");
+                });
+
+            modelBuilder.Entity("Domain.Entities.SoftwareSkill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SkillName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkillPercent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("SoftwareSkills");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Team", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("TeamAboutId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamAboutId");
+
+                    b.ToTable("Teams");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TeamAbout", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("prg1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("prg2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamAbouts");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TeamMember", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Presentation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("TeamId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TeamMembers");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TeamMemberPresentation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("prg1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("prg2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamMemberPresentations");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
@@ -504,6 +908,87 @@ namespace Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Entities.BusinessArea", b =>
+                {
+                    b.HasOne("Domain.Entities.Member", "Member")
+                        .WithMany("BusinessAreas")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Member");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ExternalLink", b =>
+                {
+                    b.HasOne("Domain.Entities.Member", "Member")
+                        .WithMany("ExternalLinks")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Team", null)
+                        .WithMany("TeamSocialsMedias")
+                        .HasForeignKey("TeamId");
+
+                    b.Navigation("Member");
+                });
+
+            modelBuilder.Entity("Domain.Entities.FeaturedArticleCard", b =>
+                {
+                    b.HasOne("Domain.Entities.FeaturedSectionEntities", "FeaturedSectionEntities")
+                        .WithMany("FeturedArticleCards")
+                        .HasForeignKey("FeaturedSectionEntitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FeaturedSectionEntities");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Member", b =>
+                {
+                    b.HasOne("Domain.Entities.Member", null)
+                        .WithMany("Flovers")
+                        .HasForeignKey("MemberId");
+                });
+
+            modelBuilder.Entity("Domain.Entities.SoftwareSkill", b =>
+                {
+                    b.HasOne("Domain.Entities.Member", "Member")
+                        .WithMany("SoftwareSkills")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Member");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Team", b =>
+                {
+                    b.HasOne("Domain.Entities.TeamAbout", "TeamAbout")
+                        .WithMany()
+                        .HasForeignKey("TeamAboutId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TeamAbout");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TeamMember", b =>
+                {
+                    b.HasOne("Domain.Entities.Team", null)
+                        .WithMany("TeamMembers")
+                        .HasForeignKey("TeamId");
+
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.OperationClaim", b =>
                 {
                     b.Navigation("UserOperationClaims");
@@ -518,6 +1003,29 @@ namespace Persistence.Migrations
                     b.Navigation("RefreshTokens");
 
                     b.Navigation("UserOperationClaims");
+                });
+
+            modelBuilder.Entity("Domain.Entities.FeaturedSectionEntities", b =>
+                {
+                    b.Navigation("FeturedArticleCards");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Member", b =>
+                {
+                    b.Navigation("BusinessAreas");
+
+                    b.Navigation("ExternalLinks");
+
+                    b.Navigation("Flovers");
+
+                    b.Navigation("SoftwareSkills");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Team", b =>
+                {
+                    b.Navigation("TeamMembers");
+
+                    b.Navigation("TeamSocialsMedias");
                 });
 #pragma warning restore 612, 618
         }
