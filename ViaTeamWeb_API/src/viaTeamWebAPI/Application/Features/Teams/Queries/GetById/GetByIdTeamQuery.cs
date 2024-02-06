@@ -9,11 +9,11 @@ using static Application.Features.Teams.Constants.TeamsOperationClaims;
 
 namespace Application.Features.Teams.Queries.GetById;
 
-public class GetByIdTeamQuery : IRequest<GetByIdTeamResponse>, ISecuredRequest
+public class GetByIdTeamQuery : IRequest<GetByIdTeamResponse>
 {
     public Guid Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    // public string[] Roles => new[] { Admin, Read };
 
     public class GetByIdTeamQueryHandler : IRequestHandler<GetByIdTeamQuery, GetByIdTeamResponse>
     {

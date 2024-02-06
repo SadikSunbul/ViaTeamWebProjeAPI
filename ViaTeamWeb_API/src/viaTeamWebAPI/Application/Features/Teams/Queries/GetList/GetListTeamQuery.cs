@@ -11,11 +11,11 @@ using static Application.Features.Teams.Constants.TeamsOperationClaims;
 
 namespace Application.Features.Teams.Queries.GetList;
 
-public class GetListTeamQuery : IRequest<GetListResponse<GetListTeamListItemDto>>, ISecuredRequest
+public class GetListTeamQuery : IRequest<GetListResponse<GetListTeamListItemDto>>
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    // public string[] Roles => new[] { Admin, Read };
 
     public class GetListTeamQueryHandler : IRequestHandler<GetListTeamQuery, GetListResponse<GetListTeamListItemDto>>
     {
