@@ -25,6 +25,8 @@ using Application.Services.BusinessAreas;
 using Application.Services.BusinessAreaMembers;
 using Application.Services.SoftwareSkills;
 using Application.Services.SoftwareSkillMembers;
+using Application.Services.Teams;
+using Application.Services.TeamAbouts;
 
 
 
@@ -67,6 +69,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IBusinessAreaMembersService, BusinessAreaMembersManager>();
         services.AddScoped<ISoftwareSkillsService, SoftwareSkillsManager>();
         services.AddScoped<ISoftwareSkillMembersService, SoftwareSkillMembersManager>();
+        services.AddScoped<ITeamsService, TeamsManager>();
+        services.AddScoped<ITeamAboutsService, TeamAboutsManager>();
         return services;
     }
 
