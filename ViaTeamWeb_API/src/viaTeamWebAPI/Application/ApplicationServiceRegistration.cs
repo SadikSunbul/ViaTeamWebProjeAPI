@@ -23,6 +23,8 @@ using Application.Services.FeaturedArticleCards;
 using Application.Services.Members;
 using Application.Services.BusinessAreas;
 using Application.Services.BusinessAreaMembers;
+using Application.Services.SoftwareSkills;
+using Application.Services.SoftwareSkillMembers;
 
 
 
@@ -63,6 +65,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IMembersService, MembersManager>();
         services.AddScoped<IBusinessAreasService, BusinessAreasManager>();
         services.AddScoped<IBusinessAreaMembersService, BusinessAreaMembersManager>();
+        services.AddScoped<ISoftwareSkillsService, SoftwareSkillsManager>();
+        services.AddScoped<ISoftwareSkillMembersService, SoftwareSkillMembersManager>();
         return services;
     }
 

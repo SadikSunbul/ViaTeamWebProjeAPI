@@ -217,299 +217,371 @@ namespace Persistence.Migrations
                         {
                             Id = 21,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Admin"
+                            Name = "SoftwareSkills.Admin"
                         },
                         new
                         {
                             Id = 22,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "StandardUser"
+                            Name = "SoftwareSkills.Read"
                         },
                         new
                         {
                             Id = 23,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.admin"
+                            Name = "SoftwareSkills.Write"
                         },
                         new
                         {
                             Id = 24,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.read"
+                            Name = "SoftwareSkills.Create"
                         },
                         new
                         {
                             Id = 25,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.write"
+                            Name = "SoftwareSkills.Update"
                         },
                         new
                         {
                             Id = 26,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.add"
+                            Name = "SoftwareSkills.Delete"
                         },
                         new
                         {
                             Id = 27,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.update"
+                            Name = "SoftwareSkillMembers.Admin"
                         },
                         new
                         {
                             Id = 28,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.delete"
+                            Name = "SoftwareSkillMembers.Read"
                         },
                         new
                         {
                             Id = 29,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Admin"
+                            Name = "SoftwareSkillMembers.Write"
                         },
                         new
                         {
                             Id = 30,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Read"
+                            Name = "SoftwareSkillMembers.Create"
                         },
                         new
                         {
                             Id = 31,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Write"
+                            Name = "SoftwareSkillMembers.Update"
                         },
                         new
                         {
                             Id = 32,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Create"
+                            Name = "SoftwareSkillMembers.Delete"
                         },
                         new
                         {
                             Id = 33,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Update"
+                            Name = "Admin"
                         },
                         new
                         {
                             Id = 34,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Members.Delete"
+                            Name = "StandardUser"
                         },
                         new
                         {
                             Id = 35,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Admin"
+                            Name = "operationclaims.admin"
                         },
                         new
                         {
                             Id = 36,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Read"
+                            Name = "operationclaims.read"
                         },
                         new
                         {
                             Id = 37,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Write"
+                            Name = "operationclaims.write"
                         },
                         new
                         {
                             Id = 38,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Create"
+                            Name = "operationclaims.add"
                         },
                         new
                         {
                             Id = 39,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Update"
+                            Name = "operationclaims.update"
                         },
                         new
                         {
                             Id = 40,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "HeroSectionWrites.Delete"
+                            Name = "operationclaims.delete"
                         },
                         new
                         {
                             Id = 41,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Admin"
+                            Name = "Members.Admin"
                         },
                         new
                         {
                             Id = 42,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Read"
+                            Name = "Members.Read"
                         },
                         new
                         {
                             Id = 43,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Write"
+                            Name = "Members.Write"
                         },
                         new
                         {
                             Id = 44,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Create"
+                            Name = "Members.Create"
                         },
                         new
                         {
                             Id = 45,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Update"
+                            Name = "Members.Update"
                         },
                         new
                         {
                             Id = 46,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedSectionEntities.Delete"
+                            Name = "Members.Delete"
                         },
                         new
                         {
                             Id = 47,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Admin"
+                            Name = "HeroSectionWrites.Admin"
                         },
                         new
                         {
                             Id = 48,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Read"
+                            Name = "HeroSectionWrites.Read"
                         },
                         new
                         {
                             Id = 49,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Write"
+                            Name = "HeroSectionWrites.Write"
                         },
                         new
                         {
                             Id = 50,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Create"
+                            Name = "HeroSectionWrites.Create"
                         },
                         new
                         {
                             Id = 51,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Update"
+                            Name = "HeroSectionWrites.Update"
                         },
                         new
                         {
                             Id = 52,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "FeaturedArticleCards.Delete"
+                            Name = "HeroSectionWrites.Delete"
                         },
                         new
                         {
                             Id = 53,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Admin"
+                            Name = "FeaturedSectionEntities.Admin"
                         },
                         new
                         {
                             Id = 54,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Read"
+                            Name = "FeaturedSectionEntities.Read"
                         },
                         new
                         {
                             Id = 55,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Write"
+                            Name = "FeaturedSectionEntities.Write"
                         },
                         new
                         {
                             Id = 56,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Create"
+                            Name = "FeaturedSectionEntities.Create"
                         },
                         new
                         {
                             Id = 57,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Update"
+                            Name = "FeaturedSectionEntities.Update"
                         },
                         new
                         {
                             Id = 58,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ContactPages.Delete"
+                            Name = "FeaturedSectionEntities.Delete"
                         },
                         new
                         {
                             Id = 59,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Admin"
+                            Name = "FeaturedArticleCards.Admin"
                         },
                         new
                         {
                             Id = 60,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Read"
+                            Name = "FeaturedArticleCards.Read"
                         },
                         new
                         {
                             Id = 61,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Write"
+                            Name = "FeaturedArticleCards.Write"
                         },
                         new
                         {
                             Id = 62,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Create"
+                            Name = "FeaturedArticleCards.Create"
                         },
                         new
                         {
                             Id = 63,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Update"
+                            Name = "FeaturedArticleCards.Update"
                         },
                         new
                         {
                             Id = 64,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreas.Delete"
+                            Name = "FeaturedArticleCards.Delete"
                         },
                         new
                         {
                             Id = 65,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreaMembers.Admin"
+                            Name = "ContactPages.Admin"
                         },
                         new
                         {
                             Id = 66,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreaMembers.Read"
+                            Name = "ContactPages.Read"
                         },
                         new
                         {
                             Id = 67,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreaMembers.Write"
+                            Name = "ContactPages.Write"
                         },
                         new
                         {
                             Id = 68,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreaMembers.Create"
+                            Name = "ContactPages.Create"
                         },
                         new
                         {
                             Id = 69,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "BusinessAreaMembers.Update"
+                            Name = "ContactPages.Update"
                         },
                         new
                         {
                             Id = 70,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "ContactPages.Delete"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Admin"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Read"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Write"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Create"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Update"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreas.Delete"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Admin"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Read"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Write"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Create"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BusinessAreaMembers.Update"
+                        },
+                        new
+                        {
+                            Id = 82,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "BusinessAreaMembers.Delete"
                         });
@@ -687,8 +759,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 178, 23, 42, 91, 255, 184, 89, 112, 251, 5, 192, 18, 89, 251, 214, 170, 164, 207, 249, 102, 244, 158, 70, 133, 88, 68, 208, 101, 177, 50, 8, 180, 240, 188, 186, 126, 158, 143, 44, 144, 231, 121, 121, 125, 101, 235, 174, 20, 212, 39, 179, 237, 78, 241, 245, 246, 61, 155, 135, 193, 1, 214, 235, 153 },
-                            PasswordSalt = new byte[] { 170, 245, 41, 67, 59, 34, 169, 219, 176, 205, 19, 169, 102, 202, 136, 153, 85, 202, 251, 240, 255, 5, 83, 119, 71, 203, 94, 211, 124, 238, 102, 233, 70, 110, 216, 170, 205, 51, 120, 218, 220, 196, 0, 86, 135, 184, 41, 59, 48, 198, 82, 9, 8, 53, 115, 146, 6, 59, 139, 119, 112, 188, 163, 41, 18, 231, 44, 241, 26, 235, 43, 67, 29, 120, 29, 55, 4, 247, 31, 200, 39, 106, 26, 106, 133, 36, 200, 168, 11, 122, 40, 38, 35, 209, 15, 33, 9, 73, 18, 32, 237, 226, 69, 52, 156, 20, 105, 197, 228, 54, 104, 56, 213, 123, 176, 202, 233, 47, 217, 26, 247, 128, 13, 232, 57, 60, 248, 158 },
+                            PasswordHash = new byte[] { 250, 247, 7, 29, 189, 227, 72, 151, 183, 68, 66, 239, 225, 114, 129, 98, 216, 131, 142, 116, 69, 224, 27, 68, 201, 9, 68, 166, 179, 186, 1, 223, 48, 43, 76, 177, 191, 17, 234, 12, 34, 66, 145, 186, 222, 171, 175, 9, 24, 187, 35, 160, 136, 171, 71, 55, 163, 92, 95, 247, 196, 100, 69, 235 },
+                            PasswordSalt = new byte[] { 222, 24, 123, 43, 21, 218, 49, 6, 233, 149, 126, 250, 87, 24, 184, 185, 113, 34, 96, 85, 120, 189, 25, 91, 117, 122, 207, 211, 174, 193, 88, 20, 161, 115, 80, 252, 179, 25, 126, 41, 149, 241, 22, 102, 148, 94, 113, 113, 234, 63, 142, 148, 239, 104, 92, 92, 53, 92, 187, 254, 168, 113, 46, 65, 1, 145, 116, 238, 29, 27, 10, 157, 158, 117, 210, 55, 196, 121, 25, 25, 153, 231, 186, 144, 122, 23, 109, 32, 233, 194, 116, 107, 46, 107, 0, 78, 70, 243, 79, 212, 170, 55, 241, 179, 233, 125, 70, 139, 203, 216, 96, 246, 29, 89, 150, 1, 86, 2, 39, 27, 119, 107, 10, 55, 9, 176, 33, 187 },
                             Status = true
                         });
                 });
@@ -852,7 +924,7 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("TeamId")
+                    b.Property<Guid>("TeamId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -968,7 +1040,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HeroSectionWrite");
+                    b.ToTable("HeroSectionWrites");
                 });
 
             modelBuilder.Entity("Domain.Entities.Member", b =>
@@ -1007,7 +1079,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Member");
+                    b.ToTable("Members");
                 });
 
             modelBuilder.Entity("Domain.Entities.SoftwareSkill", b =>
@@ -1022,9 +1094,6 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("MemberId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("SkillName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1032,6 +1101,9 @@ namespace Persistence.Migrations
                     b.Property<string>("SkillPercent")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("SoftwareSkillMemberId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -1068,7 +1140,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("SoftwareSkillId");
 
-                    b.ToTable("SoftwareSkillMember");
+                    b.ToTable("SoftwareSkillMembers");
                 });
 
             modelBuilder.Entity("Domain.Entities.Team", b =>
@@ -1284,7 +1356,9 @@ namespace Persistence.Migrations
 
                     b.HasOne("Domain.Entities.Team", null)
                         .WithMany("TeamSocialsMedias")
-                        .HasForeignKey("TeamId");
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Member");
                 });
@@ -1313,21 +1387,17 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.SoftwareSkillMember", b =>
                 {
-                    b.HasOne("Domain.Entities.Member", "Member")
+                    b.HasOne("Domain.Entities.Member", null)
                         .WithMany("SoftwareSkills")
                         .HasForeignKey("MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.SoftwareSkill", "SoftwareSkill")
+                    b.HasOne("Domain.Entities.SoftwareSkill", null)
                         .WithMany("Members")
                         .HasForeignKey("SoftwareSkillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Member");
-
-                    b.Navigation("SoftwareSkill");
                 });
 
             modelBuilder.Entity("Domain.Entities.Team", b =>

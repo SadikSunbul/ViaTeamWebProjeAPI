@@ -31,6 +31,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IMemberRepository, MemberRepository>();
         services.AddScoped<IBusinessAreaRepository, BusinessAreaRepository>();
         services.AddScoped<IBusinessAreaMemberRepository, BusinessAreaMemberRepository>();
+        services.AddScoped<ISoftwareSkillRepository, SoftwareSkillRepository>();
+        services.AddScoped<ISoftwareSkillMemberRepository, SoftwareSkillMemberRepository>();
         return services;
     }
 }

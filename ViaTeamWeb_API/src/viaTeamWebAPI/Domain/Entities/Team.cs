@@ -7,9 +7,9 @@ public class Team:Entity<Guid>
 {
     public string Name { get; set; }
     public Guid TeamAboutId { get; set; }
-    public ICollection<TeamMember> TeamMembers { get; set; }
-    public ICollection<ExternalLink> TeamSocialsMedias { get; set; }
-    public TeamAbout TeamAbout { get; set; }
+    public ICollection<TeamMember>? TeamMembers { get; set; }
+    public ICollection<ExternalLink>? TeamSocialsMedias { get; set; }
+    public TeamAbout? TeamAbout { get; set; }
 
     public Team()
     {

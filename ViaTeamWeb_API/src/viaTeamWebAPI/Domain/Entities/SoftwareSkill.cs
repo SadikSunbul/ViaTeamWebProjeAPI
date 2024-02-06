@@ -6,6 +6,6 @@ public class SoftwareSkill:Entity<Guid>
 {
     public string SkillName { get; set; }
     public string SkillPercent { get; set; }
-    public Guid MemberId { get; set; }
-    public ICollection<SoftwareSkillMember> Members { get; set; }
+    public Guid? SoftwareSkillMemberId { get; set; }
+    public ICollection<SoftwareSkillMember>? Members { get; set; }
 }
