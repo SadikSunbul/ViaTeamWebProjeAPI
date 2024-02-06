@@ -35,6 +35,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<ISoftwareSkillMemberRepository, SoftwareSkillMemberRepository>();
         services.AddScoped<ITeamRepository, TeamRepository>();
         services.AddScoped<ITeamAboutRepository, TeamAboutRepository>();
+        services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
+        services.AddScoped<IExternalLinkRepository, ExternalLinkRepository>();
         return services;
     }
 }

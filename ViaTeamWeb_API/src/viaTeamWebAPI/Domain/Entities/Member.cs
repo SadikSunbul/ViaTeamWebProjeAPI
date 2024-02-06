@@ -14,7 +14,6 @@ public class Member:Entity<Guid>
     public ICollection<SoftwareSkillMember>? SoftwareSkills { get; set; }
     public ICollection<ExternalLink>? ExternalLinks { get; set; }
     public ICollection<Member>? Flovers { get; set; }
-    public TeamMember? TeamMember { get; set; }
     public User? User { get; set; }
 
     public Member()

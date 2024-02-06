@@ -27,6 +27,8 @@ using Application.Services.SoftwareSkills;
 using Application.Services.SoftwareSkillMembers;
 using Application.Services.Teams;
 using Application.Services.TeamAbouts;
+using Application.Services.TeamMembers;
+using Application.Services.ExternalLinks;
 
 
 
@@ -71,6 +73,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ISoftwareSkillMembersService, SoftwareSkillMembersManager>();
         services.AddScoped<ITeamsService, TeamsManager>();
         services.AddScoped<ITeamAboutsService, TeamAboutsManager>();
+        services.AddScoped<ITeamMembersService, TeamMembersManager>();
+        services.AddScoped<IExternalLinksService, ExternalLinksManager>();
         return services;
     }
 
